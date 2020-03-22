@@ -8,7 +8,8 @@ usersRef.on('value', snapshot => {
     sessionStorage.setItem("COVal", snapshot.val().CO);
 
 });
-var maintenance=sessionStorage.getItem("maintainVal");
+var maintenance="false";
+maintenance=sessionStorage.getItem("maintainVal");
 //maintenance=false;
 var AQ=parseFloat(sessionStorage.getItem("AQIVal"));//returns only string value
 var CO=parseFloat(sessionStorage.getItem("COVal"));
