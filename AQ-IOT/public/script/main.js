@@ -3,11 +3,11 @@ const database = firebase.database();
 const usersRef = database.ref('/AQ/FinalData');
 
 var maintenance="false";
-//maintenance=sessionStorage.getItem("maintainVal");
 //maintenance=false;
 usersRef.on('value',snapshot=>{
-maintenance= snapshot.val().Maintenance;
+sessionStorage.setItem("maintainVal",snapshot.val().Maintenance);
 });
+maintenance=sessionStorage.getItem("maintainVal");
 
 function loadfunction(){
 if(maintenance==="false"||maintenance==null){
