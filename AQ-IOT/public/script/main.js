@@ -1,18 +1,14 @@
 //var funccall;
 const database = firebase.database();
 const usersRef = database.ref('/AQ/FinalData');
-usersRef.on('value', snapshot => {
-    console.log(snapshot.val());
-    sessionStorage.setItem("maintainVal",snapshot.val().Maintenance);
-    sessionStorage.setItem("AQIVal", snapshot.val().AQI);
-    sessionStorage.setItem("COVal", snapshot.val().CO);
 
-});
 var maintenance="false";
-maintenance=sessionStorage.getItem("maintainVal");
+//maintenance=sessionStorage.getItem("maintainVal");
 //maintenance=false;
-var AQ=parseFloat(sessionStorage.getItem("AQIVal"));//returns only string value
-var CO=parseFloat(sessionStorage.getItem("COVal"));
+usersRef.on('value',snapshot=>{
+maintenance= snapshot.val().Maintenance;
+});
+
 function loadfunction(){
 if(maintenance==="false"||maintenance==null){
     setTimeout(showRegularContent,1000);
@@ -21,21 +17,21 @@ if(maintenance==="false"||maintenance==null){
 }
 }
 function showRegularContent(){
-      var contPercent=(AQ/1000)*100;
-      var coPercent=(CO/1000)*100;
-      console.log(contPercent);
-      console.log(coPercent);
-      
-      
-      document.getElementById("loader").style.display = "none";
-      document.getElementById("regularContent").style.display = "block";
-      document.getElementById("maintenanceContent").style.display="none";
-      document.getElementById("AQIval").innerHTML="AQI : "+AQ+" PPM";
-      document.querySelector(".contlvl").style.width = contPercent.toFixed(2)+"%";
-      document.querySelector(".colvl").style.width = coPercent.toFixed(2)+"%";
-      document.getElementById("contlvllbl").innerHTML=contPercent.toFixed(2)+"%";
-      document.getElementById("colvllbl").innerHTML=coPercent.toFixed(2)+"%";
+      usersRef.on('value', snapshot => {
+          console.log(snapshot.val());
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("regularContent").style.display = "block";
+          document.getElementById("maintenanceContent").style.display = "none";
+          document.getElementById("AQIval").innerHTML = "AQI : " + snapshot.val().AQI + " PPM";
+          document.querySelector(".contlvl").style.width = (((snapshot.val().AQI) / 1000) * 100).toFixed(2) + "%";
+          document.querySelector(".colvl").style.width = (((snapshot.val().CO) / 1000) * 100).toFixed(2) + "%";
+          document.getElementById("contlvllbl").innerHTML =(((snapshot.val().AQI) / 1000) * 100).toFixed(2) + "%";
+          document.getElementById("colvllbl").innerHTML = (((snapshot.val().CO) / 1000) * 100).toFixed(2) + "%";
 
+
+      });
+      
+      
 }
 function showMaintenanceContent() {
     document.getElementById("loader").style.display = "none";
