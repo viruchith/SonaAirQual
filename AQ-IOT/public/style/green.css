@@ -1,0 +1,222 @@
+.title{
+font-family: 'Bungee shade';
+font-weight: 900 ;
+color: black;
+text-align: center;
+background-color: #4caf50;
+padding: 5px;
+border: 3px;
+}
+.innerTitle{
+font-family: 'Bungee shade';
+font-weight: 900;
+font-size: 20px;
+color: black;
+text-align: center;
+background-color: #ffff;
+padding: 5px;
+border: 3px;
+}
+/*Value display*/
+
+.ResultContainer{
+        background-color: lightgrey;
+        width:auto;
+        height:auto;
+        border: 20px #4caf50;
+        padding: 50px;
+        margin: auto;
+}
+/*Nav bar style*/
+.topnav {
+    overflow: hidden;
+    background-color: #4CAF50;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #ffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+/*Nav bar style End*/
+/*CO and AIR qual bar*/
+* {
+    box-sizing: border-box
+}
+
+.lvlbar {
+    width: 100%;
+    background-color: #69696977;
+}
+
+.levels {
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+.contlvl {
+    width: 40%;
+    background-color: #4CAF50;
+}
+
+.colvl {
+    width: 30%;
+    background-color: #2196F3;
+}
+
+
+/*CO and AIR qual bar  end*/
+.footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+
+}
+/*loader animation start*/
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0px;
+        opacity: 1
+    }
+}
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+#sonalogo:hover{
+    opacity: 0.7;
+    height:180;
+    width: 180;
+    transform: scale(1.2);
+
+}
+body {
+    background-color: #ffff;
+    font-family:'Orbitron';
+}
+
+#AQIval{
+   font-family:'Orbitron' ; 
+   font-size:25px ;
+   font-weight: 900;
+   text-align: center;
+}
+#emote{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+#sonalogo{
+    height:150px ;
+    width:150px ;
+    padding:3px ;
+    border-radius: 5px;
+}
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+#regularContent {
+    display: none;
+    text-align: center;
+}
+#maintenanceImg{
+    width: 100%;
+    height: 100%;
+}

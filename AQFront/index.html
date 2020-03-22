@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='https://fonts.googleapis.com/css?family=Bungee Shade' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a71c2ff81c.js" crossorigin="anonymous"></script>
+    <title>Sona Air Quality Monitor</title>
+</head>
+<link rel="stylesheet" href="style/green.css">
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+   var
+   _0x6c22=['80358738720','1:80358738720:web:0598776204e6401a416545','sonatechairqual.appspot.com','sonatechairqual','G-10V9LZZ8W2','sonatechairqual.firebaseapp.com'];(function(_0x1cb46b,_0x6c22e0){var
+   _0x2708d6=function(_0x51b74c){while(--_0x51b74c){_0x1cb46b['push'](_0x1cb46b['shift']());}};_0x2708d6(++_0x6c22e0);}(_0x6c22,0xdc));var
+   _0x2708=function(_0x1cb46b,_0x6c22e0){_0x1cb46b=_0x1cb46b-0x0;var _0x2708d6=_0x6c22[_0x1cb46b];return _0x2708d6;};var
+   firebaseConfig={'apiKey':'AIzaSyAlAqrzPfKROMCjyKzXNm8igF4WDdF6AXk','authDomain':_0x2708('0x1'),'databaseURL':'https://sonatechairqual.firebaseio.com','projectId':_0x2708('0x5'),'storageBucket':_0x2708('0x4'),'messagingSenderId':_0x2708('0x2'),'appId':_0x2708('0x3'),'measurementId':_0x2708('0x0')};
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
+<script src="script/main.js"></script>
+<body onload="loadfunction()">
+    <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+<div class="title">
+    <div class="innerTitle">
+        <h1>Sona Air Quality Monitor<br><i class="fas fa-fan"></i></h1>
+    </div>
+</div>
+
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">AQ  <i class="fa fa-wind" style="font-size:20px ;"></i></a>
+        <a href="#news">Previous</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <br>
+    <br>
+<div id="loader"></div>
+<div class="animate-bottom" style="display: none;" id="regularContent">
+<div class="ResultContainer"> 
+<br> <div id="AQIval">AQI : 65 </div>
+<br><i class="fas fa-grin-beam" id="emote" style="font-size:27px;"></i>
+
+<p>Contaminant level :</p>
+<div class="lvlbar" id="contlvlbar">
+    <div class="levels contlvl" id="contlvllbl">0%</div>
+</div>
+
+<p>Carbon-monoxide level :</p>
+<div class="lvlbar" id="colvlbar">
+    <div class="levels colvl" id="colvllbl">0%</div>
+</div>
+
+</div>
+</div>
+<br>
+<br>
+
+<div class="animate-bottom" style="display: none;" id="maintenanceContent">
+<div class="ResultContainer">
+    <h1> <i class="fas fa-tools" id="emote"></i>
+        <p> Node Maintenance in progress</p>
+    </h1>
+    <img src="img/maintenance.jpg" alt="" id="maintenanceImg">
+</div>
+<br>
+<br>
+</div>
+
+<div class="footer"><br><br> <h3>Built for :</h3> <a href=""><img src="https://www.sonatech.ac.in/images/logo.png" alt="" id="sonalogo"></a><br></div>
+</body>
+</html>
