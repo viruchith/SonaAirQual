@@ -14,7 +14,7 @@ maintenance=sessionStorage.getItem("maintainVal");
 var AQ=parseFloat(sessionStorage.getItem("AQIVal"));//returns only string value
 var CO=parseFloat(sessionStorage.getItem("COVal"));
 function loadfunction(){
-if(maintenance==="false"){
+if(maintenance==="false"||maintenance==null){
     setTimeout(showRegularContent,1000);
 }else{
     setTimeout(showMaintenanceContent,1000);
