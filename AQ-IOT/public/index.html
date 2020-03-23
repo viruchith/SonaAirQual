@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/a71c2ff81c.js" crossorigin="anonymous"></script>
     <title>Sona Air Quality Monitor</title>
 </head>
-<link rel="stylesheet" href="style/green.css">
+<link rel="stylesheet" href="style/green.css" id="myCss">
 <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -32,13 +32,22 @@
 <script src="script/main.js"></script>
 <body onload="loadfunction()">
     <script>
-function myFunction() {
+function navFunc() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
   } else {
     x.className = "topnav";
   }
+}
+function changeCss(){
+    var href=document.getElementById("myCss").getAttribute("href");
+    if(href=="style/green.css"){
+        document.getElementById("myCss").setAttribute("href","style/dark.css");
+    }else{
+        document.getElementById("myCss").setAttribute("href","style/green.css");
+
+    }
 }
 </script>
 <div class="title">
@@ -52,7 +61,7 @@ function myFunction() {
         <a href="#news">Previous</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <a href="javascript:void(0);" class="icon" onclick="navFunc()">
         <i class="fa fa-bars"></i>
         </a>
     </div>
@@ -89,6 +98,8 @@ function myFunction() {
 <br>
 <br>
 </div>
+
+<button class="dark-button" onclick="changeCss()"><i class="fas fa-adjust"></i></button>
 
 <div class="footer"><br><br> <h3>Built for :</h3> <a href=""><img src="https://www.sonatech.ac.in/images/logo.png" alt="" id="sonalogo"></a><br></div>
 </body>
