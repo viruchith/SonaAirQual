@@ -188,6 +188,21 @@ border: 3px;
     }
 }
     /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+
+#fanicon {
+    -webkit-animation: Fanrotation 2s infinite linear;
+}
+
+@-webkit-keyframes Fanrotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(359deg);
+    }
+}
+
 #sonalogo:hover{
     opacity: 0.7;
     height:180;
