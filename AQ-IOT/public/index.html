@@ -32,6 +32,12 @@
 <script src="script/main.js"></script>
 <body onload="loadfunction()">
     <script>
+
+if(sessionStorage.getItem("DarkMode")=="true"){
+document.getElementById("myCss").setAttribute("href","style/dark.css");
+
+}
+
 function navFunc() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -42,12 +48,14 @@ function navFunc() {
 }
 function changeCss(){
     var href=document.getElementById("myCss").getAttribute("href");
-    if(href=="style/green.css"){
-        document.getElementById("myCss").setAttribute("href","style/dark.css");
-    }else{
-        document.getElementById("myCss").setAttribute("href","style/green.css");
+   if(href=="style/green.css"){
+   document.getElementById("myCss").setAttribute("href","style/dark.css");
+   sessionStorage.setItem("DarkMode","true");
+   }else{
+   document.getElementById("myCss").setAttribute("href","style/green.css");
+    sessionStorage.setItem("DarkMode","false");
 
-    }
+   }
 }
 </script>
 <div class="title">
