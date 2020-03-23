@@ -139,12 +139,12 @@ border: 3px;
     position: fixed;
     bottom: 23px;
     right: 28px;
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
 }
 
 .dark-button:hover {
-    transform: scale(1.2);
+    transform: scale(1.5);
 }
 /*loader animation start*/
 @-webkit-keyframes spin {
