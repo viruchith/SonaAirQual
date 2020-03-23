@@ -54,6 +54,11 @@ border: 3px;
     color: white;
 }
 
+.topnav a.active:hover {
+    background-color: #ddd;
+}
+
+
 .topnav .icon {
     display: none;
 }
